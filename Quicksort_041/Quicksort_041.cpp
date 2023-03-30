@@ -110,3 +110,16 @@ void display() {
 	cout << "\n\nnumber of comparasions; " << cmp_cout << endl;
 	cout << "number of data movements: " << mov_cout << endl;
 }
+
+
+int msain()
+{
+
+	input();
+	//sort the array using quick sort
+	q_short(0, n - 1);
+	display();
+	system("pause");
+
+	return 0;
+}
