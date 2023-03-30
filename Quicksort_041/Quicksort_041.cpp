@@ -55,3 +55,44 @@ void q_short(int low, int high)
 	j = high;								   // langkah 4
 
 
+	while (i <= j)							  // langkah 10
+	{
+		//search for an element greater than pivot
+		while ((arr[i] <= pivot) && (i <= high))    // langkah 5
+		{
+			i++;									// langkah 6
+			cmp_cout++;
+		}
+		cmp_cout++;
+		//search for an element less than or equal to pivot
+		while ((arr[j] > pivot) && (j >= low))		// langkah 7
+		{
+			j--;									// langkah 8
+			cmp_cout++;
+		}
+		cmp_cout++;
+
+
+		if (i < j) // if the greater element is on the left of the element
+		{
+			//swap the element at index i whit the element at index j
+			swap(i, j);
+			mov_cout++;
+		}
+	}
+	//j now containt the index of the last element in the sorted list
+	if (low < j)							// langkah 11
+	{
+		//move the pivot to iyts correct position in the list
+		swap(low, j);
+		mov_cout++;
+	}
+	//sort the list on the left of pivot using qucl sort
+	q_short(low, j - 1);					// langkah 12
+
+	//sort the list on the right of pivot using quick sort
+	q_short(j + 1, high);					// langkah 13
+
+
+}
+
