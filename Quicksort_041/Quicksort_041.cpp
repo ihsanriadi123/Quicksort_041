@@ -38,3 +38,20 @@ void swap(int x, int y)
 	arr[x] = arr[y];
 	arr[y] = temp;
 }
+
+void q_short(int low, int high)
+{
+	int pivot, i, j;							// langkah 1
+	if (low > high)
+		return;
+
+	//partition the list into two parts:
+	//one containing elements less that or equal to pivot
+	//outher containing elements greather than pivot
+
+	pivot = arr[low];						   // langkah 2
+
+	i = low + 1;							   // langkah 3
+	j = high;								   // langkah 4
+
+
